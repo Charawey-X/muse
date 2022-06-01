@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.button_home) Button mHome;
+    @BindView(R.id.button_search) Button mHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
