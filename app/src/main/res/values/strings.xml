@@ -4,4 +4,5 @@
     <string name="backgroundimage">backgroundImage</string>
     <string name="muse">Muse.</string>
     <string name="search">SEARCH</string>
+    <string name="toast_home_button">WELCOME!</string>
 </resources>
