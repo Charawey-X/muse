@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MUSE</string>
+    <string name="search_artists_songs_lyrics"><![CDATA[Search Artists, Songs & Lyrics]]></string>
+    <string name="backgroundimage">backgroundImage</string>
+    <string name="muse">Muse.</string>
+    <string name="search">SEARCH</string>
 </resources>

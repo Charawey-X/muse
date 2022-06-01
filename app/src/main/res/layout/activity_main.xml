@@ -9,7 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/background_home_page" />
+        app:srcCompat="@drawable/background_home_page"
+        android:contentDescription="@string/backgroundimage" />
 
     <TextView
         android:id="@+id/app_name"
@@ -22,7 +23,7 @@
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="150dp"
         android:fontFamily="@font/poppins_extrabold"
-        android:text="Muse."
+        android:text="@string/muse"
         android:textAlignment="center"
         android:textColor="@color/primary_dark"
         android:textSize="80sp" />
@@ -37,7 +38,7 @@
         android:layout_centerHorizontal="false"
         android:layout_marginBottom="100dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Search Artists, Songs &Lyrics"
+        android:text="@string/search_artists_songs_lyrics"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp" />
@@ -50,7 +51,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:fontFamily="@font/poppins_bold"
-        android:text="SEARCH"
+        android:text="@string/search"
         android:textAlignment="center"
         android:textColor="@color/primary" />
 </RelativeLayout>
