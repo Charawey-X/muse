@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class ListActivity extends AppCompatActivity {
 
-    String[] searchItems = new String[] {"Smells Like Teen Spirit", "Billie Jean", "Stayin' Alive", "I Will Survive", "Whole Lotta Love", "Sweet Child O'Mine"};
+    String[] songs = new String[] {"Smells Like Teen Spirit", "Billie Jean", "Stayin' Alive", "I Will Survive", "Whole Lotta Love", "Sweet Child O'Mine"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,5 +19,9 @@ public class ListActivity extends AppCompatActivity {
         String song = intent.getStringExtra("song");
         TextView songView = findViewById(R.id.listTextView);
         songView.setText(getString(R.string.songs, song));
+
+        ListView songList = findViewById(R.id.listView);
+        ListAdapter adapter = new ListAdapter(this, android.R.layout.simple_list_item_1, songs);
+        songList.setAdapter(adapter);
     }
 }
