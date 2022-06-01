@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/home_button.xml" value="0.1205" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_search.xml" value="0.1" />
       </map>
     </option>
   </component>
