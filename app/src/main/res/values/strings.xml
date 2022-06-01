@@ -8,4 +8,7 @@
     <string name="search_artist">search_artist</string>
     <string name="search_artist_title">Search Artist</string>
     <string name="search_song">search_song</string>
+    <string name="search_song_title">Search Song</string>
+    <string name="search_lyrics_title">Search Lyrics</string>
+    <string name="enter_song_title">Enter Song</string>
 </resources>
