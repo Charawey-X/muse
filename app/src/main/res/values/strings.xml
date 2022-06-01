@@ -5,4 +5,7 @@
     <string name="muse">Muse.</string>
     <string name="search">SEARCH</string>
     <string name="toast_home_button">WELCOME!</string>
+    <string name="search_artist">search_artist</string>
+    <string name="search_artist_title">Search Artist</string>
+    <string name="search_song">search_song</string>
 </resources>
