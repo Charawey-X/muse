@@ -1,32 +1,34 @@
 # Muse
 
 - [Description](#description)
-- [Setup instructions](#setup-instructions)
-- [Authors Info](#Authors-info)
-- [Technology Used](#technologies-used)
-- [Licence](#license)
+- [Setup instructions](#setup instructions)
+- [Authors Info](#Authors info)
+- [Technology Used](#technologies used)
+- [Licence](#copyright and licensing)
 
 
 ---
 
-### Description
+## Description
 Independent project to apply principles taught in the Moringa Android(Java) programme. The application will track and collect music information from an API after the user has input a song or artist.
 
 
 ---
 
 ## Setup Instructions
-* clone HTTP: ``` git@github.com:samuelodhiambo/ECOM-MALL.git ```
-* clone SSH: ``` git@github.com:samuelodhiambo/ECOM-MALL.git ```
+* clone HTTP: ``` https://github.com/Charawey-X/muse.git ```
+* clone SSH: ``` git@github.com:Charawey-X/muse.git ```
 * Build and run app on an emulator or android device
 
 ---
 
-### Author's Information
-Charawey-X, June 2022.
+## Author's Information
+Charawey-X, June 2022. <br>
 Email:charawey@gmail.com
 
-### Technologies Used
+---
+
+## Technologies Used
 1. Android Studio
 2. Java
 3. Gradle
