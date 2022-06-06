@@ -1,10 +1,10 @@
 # Muse
 
 - [Description](#description)
-- [Setup instructions](#setup instructions)
-- [Authors Info](#Authors info)
-- [Technology Used](#technologies used)
-- [Licence](#copyright and licensing)
+- [Setup instructions](#setup-instructions)
+- [Authors Info](#Authors-info)
+- [Technology Used](#technologies-used)
+- [Licence](#copyright-and-licensing)
 
 
 ---
