@@ -2,8 +2,8 @@
 
 - [Description](#description)
 - [Setup instructions](#setup-instructions)
-- [Author's Info](#Author's-information)
-- [Technology Used](#technologies-used)
+- [Author's Info](#Author-information)
+- [Technologies Used](#technologies-used)
 - [Licence](#copyright-and-licensing)
 
 
@@ -22,9 +22,9 @@ Independent project to apply principles taught in the Moringa Android(Java) prog
 
 ---
 
-## Author's Information
+## Author Information
 Charawey-X, June 2022. <br>
-Email:charawey@gmail.com
+Email: charawey@gmail.com
 
 ---
 
