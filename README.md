@@ -2,7 +2,7 @@
 
 - [Description](#description)
 - [Setup instructions](#setup-instructions)
-- [Author's Info](#Author-information)
+- [Author's Information](#Author-information)
 - [Technologies Used](#technologies-used)
 - [Licence](#copyright-and-licensing)
 
