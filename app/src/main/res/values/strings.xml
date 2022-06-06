@@ -13,5 +13,5 @@
     <string name="enter_song_title">Enter Song</string>
     <string name="hint">Finesse</string>
     <string name="enter">ENTER</string>
-    <string name="songs">Details Of Your Song (%1$s) Will Be Displayed Soon. Here Are Some Good Songs To Listen To As You Wait!</string>
+    <string name="songs">You Searched For: %1$s. \nYour Song Details Will Be Displayed Soon. \nHere Are Some Other Good Songs!</string>
 </resources>
