@@ -4,14 +4,26 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.126" />
+        <entry key="app/src/main/res/drawable/arrow.xml" value="0.119" />
+        <entry key="app/src/main/res/drawable/continue_button.xml" value="0.119" />
         <entry key="app/src/main/res/drawable/edit_text_field.xml" value="0.1015" />
         <entry key="app/src/main/res/drawable/find_button.xml" value="0.1015" />
         <entry key="app/src/main/res/drawable/home_button.xml" value="0.1205" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1545" />
         <entry key="app/src/main/res/drawable/image_corners.xml" value="0.126" />
+        <entry key="app/src/main/res/drawable/input.xml" value="0.119" />
+        <entry key="app/src/main/res/drawable/line.xml" value="0.119" />
+        <entry key="app/src/main/res/drawable/rectangle_1.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/rectangle_2.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/rectangle_3.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/rectangle_4.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/sign_log.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_list.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_search.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_search.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/simple_list.xml" value="0.1" />
       </map>
     </option>

@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.button_search) Button mHome;
+    @BindView(R.id.get_started_button) Button mHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        Toast.makeText(MainActivity.this,R.string.toast_home_button,Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(MainActivity.this,SearchActivity.class);
+        Toast.makeText(MainActivity.this,R.string.welcome_toast,Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this,SignUpActivity.class);
         startActivity(intent);
     }
 

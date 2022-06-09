@@ -18,27 +18,37 @@
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.muse.SearchActivity"
-            />
+                android:value="com.example.muse.SearchActivity" />
         </activity>
         <activity
             android:name=".SearchActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.muse.MainActivity"
-            />
+                android:value="com.example.muse.MainActivity" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MUSE.NoBar"/>
+        <activity
+            android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.MUSE.Main">
+            android:theme="@style/Theme.MUSE.NoBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MUSE.NoBar" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MUSE.NoBar" />
 
         <meta-data
             android:name="preloaded_fonts"

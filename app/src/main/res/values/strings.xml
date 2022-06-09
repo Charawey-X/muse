@@ -1,17 +1,28 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">MUSE</string>
-    <string name="search_artists_songs_lyrics"><![CDATA[Search Artists, Songs & Lyrics]]></string>
-    <string name="backgroundimage">backgroundImage</string>
+    <string name="welcome_to_muse">Welcome To Muse.</string>
+    <string name="get_started_button">Get Started</string>
+    <string name="welcome_toast">WELCOME</string>
+    <string name="create_account">Create Account</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_email_address">Enter Email Address</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="or">or</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="already_have_an_account_log_in">Already have an account? <i>Log in</i> </string>
+    <string name="description_background_image">background image</string>
     <string name="muse">Muse.</string>
-    <string name="search">SEARCH</string>
-    <string name="toast_home_button">WELCOME!</string>
-    <string name="search_artist">search_artist</string>
-    <string name="search_artist_title">Search Artist</string>
-    <string name="search_song">search_song</string>
-    <string name="search_song_title">Search Song</string>
-    <string name="search_lyrics_title">Search Lyrics</string>
-    <string name="enter_song_title">Enter Song</string>
-    <string name="hint">Finesse</string>
-    <string name="enter">ENTER</string>
-    <string name="songs">You Searched For: %1$s. \nYour Song Details Will Be Displayed Soon. \nHere Are Some Other Good Songs!</string>
+    <string name="search_artists_songs_lyrics"><![CDATA[Search Artists, Songs & Lyrics]]></string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="username_or_email_address">Username/Email Address</string>
+    <string name="log_in">LOG IN</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account? <i>Sign Up</i></string>
+    <string name="search_form">Search Form</string>
+    <string name="enter_song_artist">Enter Song/Artist</string>
+    <string name="submit">SUBMIT</string>
+    <string name="cancel" tools:ignore="ButtonCase">CANCEL</string>
+    <string name="user">Hi, %1$s </string>
 </resources>
