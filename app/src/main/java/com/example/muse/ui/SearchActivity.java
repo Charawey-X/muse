@@ -1,4 +1,4 @@
-package com.example.muse;
+package com.example.muse.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.muse.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,7 +38,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         user.setText(getString(R.string.user,username));
 
         cancel.setOnClickListener(v -> {
-            Intent intentCancel = new Intent(SearchActivity.this,MainActivity.class);
+            Intent intentCancel = new Intent(SearchActivity.this, MainActivity.class);
             startActivity(intentCancel);
         });
 
@@ -46,7 +48,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
         String search = searchInput.getText().toString();
-        Intent intentSubmit = new Intent(SearchActivity.this,ListActivity.class);
+        Intent intentSubmit = new Intent(SearchActivity.this, ListActivity.class);
         intentSubmit.putExtra("search",search);
         startActivity(intentSubmit);
     }

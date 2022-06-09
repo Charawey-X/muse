@@ -1,8 +1,10 @@
-package com.example.muse;
+package com.example.muse.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.muse.R;
 
 public class ListActivity extends AppCompatActivity {
 

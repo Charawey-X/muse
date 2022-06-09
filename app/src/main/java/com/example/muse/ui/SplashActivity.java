@@ -1,4 +1,4 @@
-package com.example.muse;
+package com.example.muse.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.muse.R;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
@@ -18,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
 
         handler = new Handler();
         handler.postDelayed((Runnable) () -> {
-            Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }, 5000);

@@ -1,4 +1,4 @@
-package com.example.muse;
+package com.example.muse.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.muse.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -1,4 +1,4 @@
-package com.example.muse;
+package com.example.muse.adapters;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;
