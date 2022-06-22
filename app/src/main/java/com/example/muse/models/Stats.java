@@ -1,18 +1,25 @@
 
 package com.example.muse.models;
 
-import java.util.HashMap;
-import java.util.Map;
+import javax.annotation.Generated;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-
-
+@Generated("jsonschema2pojo")
 public class Stats {
 
+    @SerializedName("unreviewed_annotations")
+    @Expose
     private Integer unreviewedAnnotations;
-    private Boolean hot;
-    private Integer pageviews;
+    @SerializedName("concurrents")
+    @Expose
     private Integer concurrents;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    @SerializedName("hot")
+    @Expose
+    private Boolean hot;
+    @SerializedName("pageviews")
+    @Expose
+    private Integer pageviews;
 
     /**
      * No args constructor for use in serialization
@@ -28,12 +35,12 @@ public class Stats {
      * @param unreviewedAnnotations
      * @param hot
      */
-    public Stats(Integer unreviewedAnnotations, Boolean hot, Integer pageviews, Integer concurrents) {
+    public Stats(Integer unreviewedAnnotations, Integer concurrents, Boolean hot, Integer pageviews) {
         super();
         this.unreviewedAnnotations = unreviewedAnnotations;
+        this.concurrents = concurrents;
         this.hot = hot;
         this.pageviews = pageviews;
-        this.concurrents = concurrents;
     }
 
     public Integer getUnreviewedAnnotations() {
@@ -42,6 +49,14 @@ public class Stats {
 
     public void setUnreviewedAnnotations(Integer unreviewedAnnotations) {
         this.unreviewedAnnotations = unreviewedAnnotations;
+    }
+
+    public Integer getConcurrents() {
+        return concurrents;
+    }
+
+    public void setConcurrents(Integer concurrents) {
+        this.concurrents = concurrents;
     }
 
     public Boolean getHot() {
@@ -58,22 +73,6 @@ public class Stats {
 
     public void setPageviews(Integer pageviews) {
         this.pageviews = pageviews;
-    }
-
-    public Integer getConcurrents() {
-        return concurrents;
-    }
-
-    public void setConcurrents(Integer concurrents) {
-        this.concurrents = concurrents;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }
