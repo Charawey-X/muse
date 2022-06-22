@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,7 +15,7 @@ import com.example.muse.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SearchActivity extends AppCompatActivity implements View.OnClickListener {
+public class SearchActivity extends AppCompatActivity {
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.userNameView) TextView user;
@@ -42,14 +42,11 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
             startActivity(intentCancel);
         });
 
-        submit.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View view) {
-        String search = searchInput.getText().toString();
-        Intent intentSubmit = new Intent(SearchActivity.this, ListActivity.class);
-        intentSubmit.putExtra("search",search);
-        startActivity(intentSubmit);
+        submit.setOnClickListener(v -> {
+            String artist = searchInput.getText().toString();
+            Intent intentSubmit = new Intent(SearchActivity.this, ListActivity.class);
+            intentSubmit.putExtra("artist",artist);
+            startActivity(intentSubmit);
+        });
     }
 }
