@@ -12,9 +12,9 @@ import org.parceler.Parcel;
 @Generated("jsonschema2pojo")
 public class Hit {
 
-    @SerializedName("highlights")
-    @Expose
-    private List<Object> highlights = null;
+    //@SerializedName("highlights")
+    //@Expose
+    //private List<Object> highlights;
     @SerializedName("index")
     @Expose
     private String index;
@@ -39,21 +39,21 @@ public class Hit {
      * @param index
      * @param type
      */
-    public Hit(List<Object> highlights, String index, String type, Result result) {
+    public Hit(String index, String type, Result result) {
         super();
-        this.highlights = highlights;
+        //this.highlights = highlights;
         this.index = index;
         this.type = type;
         this.result = result;
     }
 
-    public List<Object> getHighlights() {
-        return highlights;
-    }
+    //public List<Object> getHighlights() {
+        //return highlights;
+    //}
 
-    public void setHighlights(List<Object> highlights) {
-        this.highlights = highlights;
-    }
+    //public void setHighlights(List<Object> highlights) {
+        //this.highlights = highlights;
+    //}
 
     public String getIndex() {
         return index;

@@ -90,7 +90,7 @@ public class SongDetailFragment extends Fragment {
         mCategoriesLabel.setText(android.text.TextUtils.join(", ", categories));
         mRatingLabel.setText(mSong.getResult().getReleaseDateComponents().getYear());
         mPhoneLabel.setText(mSong.getType());
-        mAddressLabel.setText(mSong.getResult().getStats().toString());
+        mAddressLabel.setText(mSong.getResult().getFeaturedArtists().toString());
 
         return view;
     }
