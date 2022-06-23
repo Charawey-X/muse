@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.muse.R;
+import com.example.muse.models.Hit;
 
 import butterknife.BindView;
 
@@ -34,6 +35,8 @@ public class SongDetailFragment extends Fragment {
 
 
 
+    private Hit mSong;
+
     public SongDetailFragment() {
         // Required empty public constructor
     }
@@ -42,12 +45,11 @@ public class SongDetailFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+     * @param song
      * @return A new instance of fragment SongDetailFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static SongDetailFragment newInstance(String param1, String param2) {
+    public static SongDetailFragment newInstance(Hit song) {
         SongDetailFragment fragment = new SongDetailFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
