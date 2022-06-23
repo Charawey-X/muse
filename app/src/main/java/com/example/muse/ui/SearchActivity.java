@@ -43,9 +43,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         submit.setOnClickListener(v -> {
-            String artist = searchInput.getText().toString();
             Intent intentSubmit = new Intent(SearchActivity.this, ListActivity.class);
-            intentSubmit.putExtra("artist",artist);
             startActivity(intentSubmit);
         });
     }
