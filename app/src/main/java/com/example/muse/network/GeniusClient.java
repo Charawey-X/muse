@@ -1,6 +1,6 @@
 package com.example.muse.network;
 
-import static com.example.muse.Constants.MUSIX_BASE_URL;
+import static com.example.muse.Constants.GENIUS_BASE_URL;
 
 
 import java.io.IOException;
@@ -30,7 +30,7 @@ public class GeniusClient {
                     .build();
 
             retrofit = new Retrofit.Builder()
-                    .baseUrl(MUSIX_BASE_URL)
+                    .baseUrl(GENIUS_BASE_URL)
                     .client(okHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();

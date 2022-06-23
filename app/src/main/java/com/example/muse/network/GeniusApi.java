@@ -7,7 +7,7 @@ import retrofit2.http.Header;
 import retrofit2.http.Query;
 
 public interface GeniusApi {
-   @GET("track.search")
+   @GET("/search")
     Call<SearchResponse> getResults(
             @Header("x-rapidapi-ua") String playGround,
             @Header("X-RapidAPI-Key") String keyHeader,

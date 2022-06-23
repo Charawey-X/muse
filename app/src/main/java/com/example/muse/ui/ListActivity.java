@@ -15,9 +15,9 @@ import android.widget.TextView;
 import com.example.muse.Constants;
 import com.example.muse.R;
 import com.example.muse.adapters.ListAdapter;
-import com.example.muse.models.Track;
-import com.example.muse.models.Track__1;
-import com.example.muse.models.TracksResponse;
+import com.example.muse.models.Hit;
+import com.example.muse.models.PrimaryArtist;
+import com.example.muse.models.SearchResponse;
 import com.example.muse.network.GeniusApi;
 import com.example.muse.network.GeniusClient;
 
@@ -45,34 +45,34 @@ public class ListActivity extends AppCompatActivity {
         songTextView.setText(getString(R.string.songs_with_the_title,artist));
 
         GeniusApi client = GeniusClient.getClient();
-        Call<TracksResponse> call = client.getResults(Constants.API_KEY, artist);
+        Call<SearchResponse> call = client.getResults("RapidAPI-Playground",Constants.GENIUS_API_KEY,"genius.p.rapidapi.com",Constants.GENIUS_API_KEY, artist);
 
-        call.enqueue(new Callback<TracksResponse>() {
+        call.enqueue(new Callback<SearchResponse>() {
             @Override
-            public void onResponse(Call<TracksResponse> call, Response<TracksResponse> response) {
+            public void onResponse(Call<SearchResponse> call, Response<SearchResponse> response) {
                 hideProgressBar();
                 if(response.isSuccessful()){
-                    List<Track> trackList = response.body().getTrackList();
-                    String [] hits = new String[trackList.size()];
-                    String [] albums = new String[trackList.size()];
+                    List<Hit> hitList = response.body().getResponse().getHits();
+                    String [] hits = new String[hitList.size()];
+                    String [] artists = new String[hitList.size()];
 
                     for (int i = 0; i < hits.length; i++){
-                        hits[i] = String.valueOf(trackList.get(i).getTrack());
+                        hits[i] = hitList.get(i).getResult().getFullTitle();
                     }
 
-                    for (int i = 0; i < albums.length; i++) {
-                        Track__1 album = trackList.get(i).getTrack();
-                        albums[i] = album.getAlbumName();
+                    for (int i = 0; i < artists.length; i++) {
+                        PrimaryArtist artist = hitList.get(i).getResult().getPrimaryArtist();
+                        artists[i] = artist.getName();
                     }
 
-                    ArrayAdapter adapter = new ListAdapter(ListActivity.this, android.R.layout.simple_list_item_1, hits, albums);
+                    ArrayAdapter adapter = new ListAdapter(ListActivity.this, android.R.layout.simple_list_item_1, hits, artists);
                     mListView.setAdapter(adapter);
                     showSongs();
                 } else showUnsuccessfulMessage();
             }
 
             @Override
-            public void onFailure(Call<TracksResponse> call, Throwable t) {
+            public void onFailure(Call<SearchResponse> call, Throwable t) {
                 Log.e("Error Message", "onFailure: ",t );
                 hideProgressBar();
                 showFailureMessage();
