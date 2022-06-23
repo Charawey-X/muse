@@ -26,4 +26,6 @@
     <string name="cancel" tools:ignore="ButtonCase">CANCEL</string>
     <string name="user">Hi, %1$s!</string>
     <string name="songs_with_the_title">Here are all the songs by the artist: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
