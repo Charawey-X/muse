@@ -1,6 +1,8 @@
 package com.example.muse.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -33,7 +35,10 @@ public class ListActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.songTextView) TextView songTextView;
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.listView) ListView mListView;
+    @BindView(R.id.recyclerView)
+    RecyclerView mRecyclerView;
+    private ListAdapter mAdapter;
+    public List<Hit> songs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,32 +46,24 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
         ButterKnife.bind(this);
         Intent intent = getIntent();
-        String artist = intent.getStringExtra("artist");
-        songTextView.setText(getString(R.string.songs_with_the_title,artist));
+        String song = intent.getStringExtra("artist");
+        //songTextView.setText(getString(R.string.songs_with_the_title,artist));
 
         GeniusApi client = GeniusClient.getClient();
-        Call<SearchResponse> call = client.getResults("RapidAPI-Playground",Constants.GENIUS_API_KEY,"genius.p.rapidapi.com",Constants.GENIUS_API_KEY, artist);
+        Call<SearchResponse> call = client.getResults("RapidAPI-Playground",Constants.GENIUS_API_KEY,"genius.p.rapidapi.com",Constants.GENIUS_API_KEY, song);
 
         call.enqueue(new Callback<SearchResponse>() {
             @Override
             public void onResponse(Call<SearchResponse> call, Response<SearchResponse> response) {
                 hideProgressBar();
                 if(response.isSuccessful()){
-                    List<Hit> hitList = response.body().getResponse().getHits();
-                    String [] hits = new String[hitList.size()];
-                    String [] artists = new String[hitList.size()];
-
-                    for (int i = 0; i < hits.length; i++){
-                        hits[i] = hitList.get(i).getResult().getFullTitle();
-                    }
-
-                    for (int i = 0; i < artists.length; i++) {
-                        PrimaryArtist artist = hitList.get(i).getResult().getPrimaryArtist();
-                        artists[i] = artist.getName();
-                    }
-
-                    ArrayAdapter adapter = new ListAdapter(ListActivity.this, android.R.layout.simple_list_item_1, hits, artists);
-                    mListView.setAdapter(adapter);
+                    songs = response.body().getResponse().getHits();
+                    mAdapter = new ListAdapter(ListActivity.this, songs);
+                    mRecyclerView.setAdapter(mAdapter);
+                    RecyclerView.LayoutManager layoutManager =
+                            new LinearLayoutManager(ListActivity.this);
+                    mRecyclerView.setLayoutManager(layoutManager);
+                    mRecyclerView.setHasFixedSize(true);
                     showSongs();
                 } else showUnsuccessfulMessage();
             }
@@ -98,8 +95,8 @@ public class ListActivity extends AppCompatActivity {
     }
 
     private void showSongs() {
-        mListView.setVisibility(View.VISIBLE);
-        songTextView.setVisibility(View.VISIBLE);
+        mRecyclerView.setVisibility(View.VISIBLE);
+        //songTextView.setVisibility(View.VISIBLE);
     }
 
     private void hideProgressBar() {
