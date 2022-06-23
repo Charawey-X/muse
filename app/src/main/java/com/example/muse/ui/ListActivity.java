@@ -6,12 +6,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.muse.Constants;
@@ -40,15 +46,14 @@ public class ListActivity extends AppCompatActivity {
     private ListAdapter mAdapter;
     public List<Hit> songs;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
-        ButterKnife.bind(this);
-        Intent intent = getIntent();
-        String song = intent.getStringExtra("artist");
-        //songTextView.setText(getString(R.string.songs_with_the_title,artist));
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+    private String mRecentAddress;
 
+    private static final String TAG = ListActivity.class.getSimpleName();
+
+
+    private void fetchSongs(String song) {
         GeniusApi client = GeniusClient.getClient();
         Call<SearchResponse> call = client.getResults("RapidAPI-Playground",Constants.GENIUS_API_KEY,"genius.p.rapidapi.com",Constants.GENIUS_API_KEY, song);
 
@@ -75,10 +80,59 @@ public class ListActivity extends AppCompatActivity {
                 showFailureMessage();
             }
         });
-
     }
 
-    private static final String TAG = ListActivity.class.getSimpleName();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_list);
+        ButterKnife.bind(this);
+        Intent intent = getIntent();
+        String song = intent.getStringExtra("artist");
+        //songTextView.setText(getString(R.string.songs_with_the_title,artist));
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_SONG_KEY, null);
+        if(mRecentAddress != null){
+            fetchSongs(mRecentAddress);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_search, menu);
+        ButterKnife.bind(this);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+
+        MenuItem menuItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String song) {
+                addToSharedPreferences(song);
+                fetchSongs(song);
+                return false;
+            }
+
+
+            @Override
+            public boolean onQueryTextChange(String location) {
+                return false;
+            }
+        });
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        return super.onOptionsItemSelected(item);
+    }
+
+
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.errorTextView) TextView mErrorTextView;
     @SuppressLint("NonConstantResourceId")
@@ -101,5 +155,9 @@ public class ListActivity extends AppCompatActivity {
 
     private void hideProgressBar() {
         mProgressBar.setVisibility(View.GONE);
+    }
+
+    private void addToSharedPreferences(String location) {
+        mEditor.putString(Constants.PREFERENCES_SONG_KEY, location).apply();
     }
 }
