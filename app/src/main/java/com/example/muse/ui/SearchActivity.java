@@ -21,8 +21,6 @@ public class SearchActivity extends AppCompatActivity {
     @BindView(R.id.userNameView) TextView user;
 
     @SuppressLint("NonConstantResourceId")
-    @BindView(R.id.searchInput) EditText searchInput;
-    @SuppressLint("NonConstantResourceId")
     @BindView(R.id.submit) Button submit;
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.cancel) Button cancel;
